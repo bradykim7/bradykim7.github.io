@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Jekyll!"
+title: "Into Binary Tree"
 date: 2020-06-08
 categories:
   - Algorithm
@@ -61,8 +61,8 @@ class BinarySearchTree:
         self.size= 0
         self.root = None
 
-bst1 = BinarySearchTree() // BinarySearchTree {size:0, root: None}
-node1 = Node(1) // Node {val: 1, left :None, right: None
+bst1 = BinarySearchTree() # BinarySearchTree {size:0, root: None}
+node1 = Node(1) # Node {val: 1, left :None, right: None}
 ```
 ##### Insertion
 An insertion populates the BST with nodes. The method will accept a value and create a new node. Once the node is created,
@@ -77,7 +77,7 @@ left and higher values on the right. If the value already exists, the method ret
 A lookup process runs through similar checks to find the node in the tree. If the node does not exist, the method returns None.
 보기 프로세스는 트리에서 노드를 찾는 것과 유사하다. 만약 노드가 존재하지 않는다면 None값을 반환한다.
 
-```
+```python
 class Node:
     def __init__(self,val):
         self.val = val
