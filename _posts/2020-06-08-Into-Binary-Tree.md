@@ -11,7 +11,7 @@ tags:
 ### Into Binary Search Tree
 ### Original from [HERE](https://levelup.gitconnected.com/an-into-to-binary-search-trees-432f94d180da)
 
-<img src="../assets/images/2020/06/p1.jpg" width="650px" height="auto" align="center"></img>
+<img src="{{ bradykim7.github.io }}/assets/images/2020/06/p1.jpg" alt="">
 
 Binary search trees are excellent ways to store sorted data. The data structure can provide a relatively quick run time of 
 O (log(n)) for searching, insertion and removal. This post will walk through what a Binary Search Tree(BST) is, how to create 
@@ -155,7 +155,7 @@ bst1.lookup(3)
 ```
 
 ##### Why ? 
-<img src="../assets/images/2020/06/p2.jpg" width="650px" height="auto" align="center"></img>
+<img src="{{ bradykim7.github.io }}/assets/images/2020/06/p2.jpg" alt="">
 
 
 BST's primary benefit is search time!
