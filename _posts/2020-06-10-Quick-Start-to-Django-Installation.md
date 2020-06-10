@@ -30,7 +30,6 @@ cd test
 python3 -m venv env
 cd env
 source bin/activate
-
 ```
 
 Open the Terminal and create a Python virtual environment, then activate it.
@@ -42,7 +41,6 @@ Open the Terminal and create a Python virtual environment, then activate it.
 
 ```shell script
 pip install django
-
 ```
 Install **django** in your activated virtual environment.
 
@@ -53,8 +51,8 @@ Django를 가상 환경에 설치한 후 활성화 시킨다.
 
 ```shell script
 django-admin startproject mysite
-
 ```
+
 Create a Django project named "mysite".
 
 "mysite"라는 Django 프로젝트를 만든다.
@@ -77,7 +75,6 @@ Django 어플리케이션을 만들어보자.
 
 ```shell script
 python3 manage.py runserver
-
 ```
 Result
 <img src="{{ bradykim7.github.io }}/assets/images/2020/06/p4.jpg" alt="">
