@@ -3,9 +3,9 @@ title: "Modulo Operation"
 date: 2020-06-11
 categories:
   - Algorithm
-  - Math
 tags:
   - Algorithm
+  - Modulo
 ---
 
 ### Modulo Operation
