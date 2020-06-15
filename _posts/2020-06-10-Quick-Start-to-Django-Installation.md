@@ -42,6 +42,7 @@ Open the Terminal and create a Python virtual environment, then activate it.
 ```shell script
 pip install django
 ```
+
 Install **django** in your activated virtual environment.
 
 Django를 가상 환경에 설치한 후 활성화 시킨다.
@@ -76,6 +77,7 @@ Django 어플리케이션을 만들어보자.
 ```shell script
 python3 manage.py runserver
 ```
+
 Result
 <img src="{{ bradykim7.github.io }}/assets/images/2020/06/p4.jpg" alt="">
 
