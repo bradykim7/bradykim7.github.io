@@ -1,5 +1,5 @@
 ---
-title: "SOLID Principles every Developer Should Know Part1"
+title: "SOLID Principles every Developer Should Know Part2"
 date: 2020-06-16
 categories:
   - Design Pattern
@@ -9,7 +9,7 @@ tags:
   - Refactoring
   - SOLID principle
 ---
-### SOLID Principles every Developer Should Know Part 1
+### SOLID Principles every Developer Should Know Part 2
 ### Original from [HERE](https://blog.bitsrc.io/solid-principles-every-developer-should-know-b3bfa96bb688)
 
 
