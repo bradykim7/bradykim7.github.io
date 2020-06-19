@@ -243,6 +243,8 @@ return its values, like in the example shown, then you must use .values().
 In fact, if you forget to use this method, you will find yourself iterating through the keys of your Python kwargs dictionary 
 instead, like in the following example:
 
+사실 만약 이 메소드를 사용하는 방법을 잊어버렸다면, 대신, 너 스스로 반복하는 파이썬 kwargs 딕셔너리의 키값들을 반환하는 것 이 보일 것이다.
+
 ```python
 # concatenate_keys.py
 def concatenate(**kwargs):
@@ -257,6 +259,8 @@ print(concatenate(a="Real", b="Python", c="Is", d="Great", e="!"))
 
 Now, if you try to execute this example, you’ll notice the following output:
 
+이제 아래의 예제를 실행 보자. 그럼 결과값이 아래와 같을 것이다.
+
 ```shell script
 $ python concatenate_keys.py
 abcde
@@ -265,104 +269,217 @@ abcde
 As you can see, if you don’t specify .values(), your function will iterate over the keys of your Python kwargs dictionary, 
 returning the wrong result.
 
-#### Ordering Arguments in a Function
-Now that you have learned what *args and **kwargs are for, you are ready to start writing functions that take a varying number of input arguments. But what if you want to create a function that takes a changeable number of both positional and named arguments?
+위에서 보는 것처럼, .values() 를 사용하지 않으면, 잘못된 결과를 반환하는 것을 보여줍니다.
 
-In this case, you have to bear in mind that order counts. Just as non-default arguments have to precede default arguments, so *args must come before **kwargs.
+#### Ordering Arguments in a Function
+
+Now that you have learned what *args and **kwargs are for, you are ready to start writing functions that take a varying
+ number of input arguments. But what if you want to create a function that takes a changeable number of both positional 
+ and named arguments?
+
+이제 *args 와 **kwargs 는 너는 이제 다양한 숫자의 매개변수를 사용한 함수를 만들 준비가 되어 있는 것이다. 하지만 만일 너가 매개변수의 수가 가능함과 동시에, 
+매개변수가 지정 되어있는 함수는 어떻게 해야할까 ?
+
+In this case, you have to bear in mind that order counts. Just as non-default arguments have to precede default arguments, 
+so *args must come before **kwargs.
+
+이러한 경우 너는 순서를 정하는 것을 생각해야한다. *args 는 반드시 **kwargs 앞에 선행 되어야한다.
 
 To recap, the correct order for your parameters is:
 
-Standard arguments
-*args arguments
-**kwargs arguments
+간단하게 말해서 아래와 같은 순서로 해야한다. 
+
+1. Standard arguments
+2. *args arguments
+3. **kwargs arguments
+
+1. 기존 평범한 매개변수
+2. *args 매개변수
+3. **kwargs 매개변수 
+
+
 For example, this function definition is correct:
 
+아래와같은 함수의 정의가 맞는 예이다.
+
+```python
 # correct_function_definition.py
 def my_function(a, b, *args, **kwargs):
     pass
-The *args variable is appropriately listed before **kwargs. But what if you try to modify the order of the arguments? For example, consider the following function:
+```
 
+The *args variable is appropriately listed before **kwargs. But what if you try to modify the order of the arguments? 
+For example, consider the following function:
+
+*args 변수가 **kwargs 이전에 선언되어있어서 적절한 예이다. 하지만 만약 매개변수의 순서를 바꾼다면 어떻게 될까? 
+아래의 예제를 살펴보자.
+
+```python
 # wrong_function_definition.py
 def my_function(a, b, **kwargs, *args):
     pass
-Now, **kwargs comes before *args in the function definition. If you try to run this example, you’ll receive an error from the interpreter:
+```
 
+Now, **kwargs comes before *args in the function definition. If you try to run this example, you’ll receive an error 
+from the interpreter:
+
+이제, **kwargs 이 *args 보다 먼저 나오게 정의하였고, 예제를 한번 실행시켜보면, 오류가 생기는것을 볼 수 있다.
+
+```shell script
 $ python wrong_function_definition.py
   File "wrong_function_definition.py", line 2
     def my_function(a, b, **kwargs, *args):
                                     ^
 SyntaxError: invalid syntax
+```
+
 In this case, since *args comes after **kwargs, the Python interpreter throws a SyntaxError.
 
+이 경우, 파이썬 인터프리터는 구문오류를 알려준다.
 
 #### Unpacking With the Asterisk Operators: * & **
-You are now able to use *args and **kwargs to define Python functions that take a varying number of input arguments. Let’s go a little deeper to understand something more about the unpacking operators.
 
-The single and double asterisk unpacking operators were introduced in Python 2. As of the 3.5 release, they have become even more powerful, thanks to PEP 448. In short, the unpacking operators are operators that unpack the values from iterable objects in Python. The single asterisk operator * can be used on any iterable that Python provides, while the double asterisk operator ** can only be used on dictionaries.
+You are now able to use *args and **kwargs to define Python functions that take a varying number of input arguments. 
+Let’s go a little deeper to understand something more about the unpacking operators.
 
+이제 어느정도 적절하게 *args 와 **kwargs 를 파이썬 함수에서 정의할 수 있고, 또 다양한 매개변수를 사옹할 수 있게 되었다. 자 이번에는 *연산자와, **연산자에 대해 좀더
+깊게 알아보자. 
+
+The single and double asterisk unpacking operators were introduced in Python 2. As of the 3.5 release, they have become
+ even more powerful, thanks to PEP 448. In short, the unpacking operators are operators that unpack the values from 
+ iterable objects in Python. The single asterisk operator * can be used on any iterable that Python provides, 
+ while the double asterisk operator ** can only be used on dictionaries.
+
+Python 2 에서 하나 혹은 두개의 별표는 포장되어지지 않는 연산자가 소개 되었다. 그리고 Python3.5 가 배포 되면서, 그들은 좀더 강력해진 기능들이 생겼다. 짧게말해서
+Unpacking 연산자는 값들을 즉, 반복가능한 객체들을 unpack하는 것이다. 하나의 별표 연산자 *는 파이썬이 제공하는 어떤 iterable 한 것들을 사용할 수 있고, **연산자는 
+마찬가지로 딕셔너리가 사용하는 것들을 사용할 수 있다.
+ 
 Let’s start with an example:
 
+```python
 # print_list.py
 my_list = [1, 2, 3]
 print(my_list)
+```
+
 This code defines a list and then prints it to the standard output:
 
+아래의 코드는 리스트를 정의하고 이를 출력하는 것이다.
+
+```shell script
 $ python print_list.py
 [1, 2, 3]
+```
+
 Note how the list is printed, along with the corresponding brackets and commas.
 
-Now, try to prepend the unpacking operator * to the name of your list:
+여기 이제 리스트를 출력했다.
 
+Now, try to prepend the unpacking operator * to the name of your list:
+이제 어떻게 *연산자를 사용했을때의 출력결과를 보자.
+
+```python
 # print_unpacked_list.py
 my_list = [1, 2, 3]
 print(*my_list)
+```
+
 Here, the * operator tells print() to unpack the list first.
+
+여기 unpack된 리스트의 출력을 이제 살펴보자.
 
 In this case, the output is no longer the list itself, but rather the content of the list:
 
+이제 더 이상 스스로 리스트의 결과물을 출력하지 않고, 단지 내용만을 출력한다.
+
+```shell script
 $ python print_unpacked_list.py
 1 2 3
-Can you see the difference between this execution and the one from print_list.py? Instead of a list, print() has taken three separate arguments as the input.
+```
 
-Another thing you’ll notice is that in print_unpacked_list.py, you used the unpacking operator * to call a function, instead of in a function definition. In this case, print() takes all the items of a list as though they were single arguments.
+Can you see the difference between this execution and the one from print_list.py? Instead of a list, print() has taken 
+three separate arguments as the input.
 
-You can also use this method to call your own functions, but if your function requires a specific number of arguments, then the iterable you unpack must have the same number of arguments.
+이제 수행했을 때의 차이점을 알겠는가? 각각의 밸류값만 출력하는 것을 볼 수 있다.
+
+Another thing you’ll notice is that in print_unpacked_list.py, you used the unpacking operator * to call a function, 
+instead of in a function definition. In this case, print() takes all the items of a list as though they were single arguments.
+
+다른 것을 너가 알아야 차려야 할 것은 * 연산자를 함수에서 사용하기 위해서는 함수정의에서 뿐만 아니라 호출시에도 사용한다는 것이다. 이 경우, print() 함수는 
+모든 요소들을 리스트로써 받고, 하나의 매개변수로 취급한다.
+
+You can also use this method to call your own functions, but if your function requires a specific number of arguments, 
+then the iterable you unpack must have the same number of arguments.
+
+너는 또한 이 매소드를 함수안에서 호출 할 수도 있다. 만약 너의 함수가 특정 숫자의 매개변수가 요구한다면, 너는 같은 숫자의 매개변수를 가져야한다.
 
 To test this behavior, consider this script:
+이를 테스트하기 위해서, 실행 해보자.
 
+```python
 # unpacking_call.py
 def my_sum(a, b, c):
     print(a + b + c)
 
 my_list = [1, 2, 3]
 my_sum(*my_list)
+```
+
 Here, my_sum() explicitly states that a, b, and c are required arguments.
+
+여기 위에 a,b,c를 나타내는 my_sum() 함수를 나타내었다.
 
 If you run this script, you’ll get the sum of the three numbers in my_list:
 
+이를 스크립트상에서 실행시키면, 3 숫자의 합이 출력된다.
+
+```shell script
 $ python unpacking_call.py
 6
+```
+
 The 3 elements in my_list match up perfectly with the required arguments in my_sum().
+
+3개의 요소가 my_list 와 완벽하게 갯수가 my_sum() 에서 맞아야 하는 것을 요구한다.
 
 Now look at the following script, where my_list has 4 arguments instead of 3:
 
+이제 만약 4가지의 매개변수를 넘길 경우 어떻게 되는지 살펴보자.
+
+```python
 # wrong_unpacking_call.py
 def my_sum(a, b, c):
     print(a + b + c)
 
 my_list = [1, 2, 3, 4]
 my_sum(*my_list)
-In this example, my_sum() still expects just three arguments, but the * operator gets 4 items from the list. If you try to execute this script, you’ll see that the Python interpreter is unable to run it:
+```
 
+In this example, my_sum() still expects just three arguments, but the * operator gets 4 items from the list. 
+If you try to execute this script, you’ll see that the Python interpreter is unable to run it:
+
+이 예제는, 아직 까지 3개의 요소를 매개변수로 받지만, * 연산자로 넘기는 매개변수의 갯수를 4개로 해보겟다. 만약 이 코드를 실행한다면, 이는 파이썬 인터프리트가
+실행하지 못한다.
+
+```shell script
 $ python wrong_unpacking_call.py
 Traceback (most recent call last):
   File "wrong_unpacking_call.py", line 6, in <module>
     my_sum(*my_list)
 TypeError: my_sum() takes 3 positional arguments but 4 were given
-When you use the * operator to unpack a list and pass arguments to a function, it’s exactly as though you’re passing every single argument alone. This means that you can use multiple unpacking operators to get values from several lists and pass them all to a single function.
+```
+
+When you use the * operator to unpack a list and pass arguments to a function, it’s exactly as though you’re passing 
+every single argument alone. This means that you can use multiple unpacking operators to get values from several lists
+ and pass them all to a single function.
+
+만약 * 연산자를사용할때, 이는 정확하게 각각의 매개변수 에 정확하게 맞아야한다. 이는 무슨 말이나면, unpacking 연산자를 사용해서 각각의 리스트들을 
+전달 할 수 있다.(내가쓰고도 뭔말인지...) 뭐 리스트로 여러개를 넘길 수 있다는 말인 것같다.
 
 To test this behavior, consider the following example:
+이를 테스트하기 위해서 아래의 예제를 보자.
 
+```python
 # sum_integers_args_3.py
 def my_sum(*args):
     result = 0
@@ -375,12 +492,22 @@ list2 = [4, 5]
 list3 = [6, 7, 8, 9]
 
 print(my_sum(*list1, *list2, *list3))
+```
+
 If you run this example, all three lists are unpacked. Each individual item is passed to my_sum(), resulting in the following output:
 
+만약 이를 실행 시킨다면, 모든 3개의 리스트들은 unpacked 상태이다. 이 각각의 아이템들은 my_sum()에게 전달하면 결과는 아래와 같을 것이다.
+
+```shell script
 $ python sum_integers_args_3.py
 45
-There are other convenient uses of the unpacking operator. For example, say you need to split a list into three different parts. The output should show the first value, the last value, and all the values in between. With the unpacking operator, you can do this in just one line of code:
+```
 
+There are other convenient uses of the unpacking operator. For example, say you need to split a list into three 
+different parts. The output should show the first value, the last value, and all the values in between. With the 
+unpacking operator, you can do this in just one line of code:
+
+```python
 # extract_list_body.py
 my_list = [1, 2, 3, 4, 5, 6]
 
@@ -389,65 +516,95 @@ a, *b, c = my_list
 print(a)
 print(b)
 print(c)
-In this example, my_list contains 6 items. The first variable is assigned to a, the last to c, and all other values are packed into a new list b. If you run the script, print() will show you that your three variables have the values you would expect:
+```
 
+In this example, my_list contains 6 items. The first variable is assigned to a, the last to c, and all other values 
+are packed into a new list b. If you run the script, print() will show you that your three variables have the values 
+you would expect:
+
+위의 예제는 6개의 항목을 가진 리스트이다. 첫번 째 변수는 a에 할당되고, 마지막은 c에 할당 된다. 그리고 나머지 값들은 새로운 리스트 b에 뭉쳐진다. 만약 이를 
+실행 시키면 다음과 같이 출력할 것이다.
+
+```shell script
 $ python extract_list_body.py
 1
 [2, 3, 4, 5]
 6
-Another interesting thing you can do with the unpacking operator * is to split the items of any iterable object. This could be very useful if you need to merge two lists, for instance:
+```
 
+Another interesting thing you can do with the unpacking operator * is to split the items of any iterable object. 
+This could be very useful if you need to merge two lists, for instance:
+
+다른 흥미로운 *연산자읭 특징은 어떠한 반복가능한 객체들을 쪼갤 수 있다. 이는 두개의 리스트를 합칠 때 유용하다.
+
+```python
 # merging_lists.py
 my_first_list = [1, 2, 3]
 my_second_list = [4, 5, 6]
 my_merged_list = [*my_first_list, *my_second_list]
 
 print(my_merged_list)
+```
+
 The unpacking operator * is prepended to both my_first_list and my_second_list.
+
+unpacking 연산자 * 은 my_first_list 와  my_second_list에 사용된다.
 
 If you run this script, you’ll see that the result is a merged list:
 
+만약 이 코드를 실행시키면 아래와 같은 합성된 리스트를 얻을 수 있다.
+
+```shell script
 $ python merging_lists.py
 [1, 2, 3, 4, 5, 6]
+```
+
 You can even merge two different dictionaries by using the unpacking operator **:
 
+또한 ** 연산자를 통해 두 개의 딕셔너리를 합치는 것 또한 가능하다.
+
+```python
 # merging_dicts.py
 my_first_dict = {"A": 1, "B": 2}
 my_second_dict = {"C": 3, "D": 4}
 my_merged_dict = {**my_first_dict, **my_second_dict}
 
 print(my_merged_dict)
+```
+
 Here, the iterables to merge are my_first_dict and my_second_dict.
 
 Executing this code outputs a merged dictionary:
 
+여기 두 개의 딕셔너리를 합친 코드의 예제이다.
+
+```shell script
 $ python merging_dicts.py
 {'A': 1, 'B': 2, 'C': 3, 'D': 4}
+```
+
 Remember that the * operator works on any iterable object. It can also be used to unpack a string:
 
+연산자 *는 순환 간으한 모든 객체에서 사용이 가능해서 String에서 또한 사용이 가능하다.
+
+```python
 # string_to_list.py
 a = [*"RealPython"]
 print(a)
+```
+
 In Python, strings are iterable objects, so * will unpack it and place all individual values in a list a:
 
+파이선에서 stringㄷ르은 반복 가능한 객체이다. 이를 리스트 대신해서 한번 사용해 보겠다.
+
+```shell script
 $ python string_to_list.py
 ['R', 'e', 'a', 'l', 'P', 'y', 't', 'h', 'o', 'n']
-The previous example seems great, but when you work with these operators it’s important to keep in mind the seventh rule of The Zen of Python by Tim Peters: Readability counts.
-
-To see why, consider the following example:
-
-# mysterious_statement.py
-*a, = "RealPython"
-print(a)
-There’s the unpacking operator *, followed by a variable, a comma, and an assignment. That’s a lot packed into one line! In fact, this code is no different from the previous example. It just takes the string RealPython and assigns all the items to the new list a, thanks to the unpacking operator *.
-
-The comma after the a does the trick. When you use the unpacking operator with variable assignment, Python requires that your resulting variable is either a list or a tuple. With the trailing comma, you have actually defined a tuple with just one named variable a.
-
-While this is a neat trick, many Pythonistas would not consider this code to be very readable. As such, it’s best to use these kinds of constructions sparingly.
-
+```
 
 #### Conclusion
-You are now able to use *args and **kwargs to accept a changeable number of arguments in your functions. You have also learned something more about the unpacking operators.
+You are now able to use *args and **kwargs to accept a changeable number of arguments in your functions. You have also 
+learned something more about the unpacking operators.
 
 You’ve learned:
 
