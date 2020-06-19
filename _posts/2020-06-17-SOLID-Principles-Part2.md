@@ -1,6 +1,6 @@
 ---
 title: "SOLID Principles every Developer Should Know Part2"
-date: 2020-06-16
+date: 2020-06-17
 categories:
   - Design Pattern
   - Refactoring
