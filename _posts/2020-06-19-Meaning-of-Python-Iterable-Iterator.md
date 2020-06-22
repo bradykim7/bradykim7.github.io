@@ -69,6 +69,7 @@ for y in x:
     print y
 ```
 
+
 ```shell script
 a
 c
@@ -154,5 +155,3 @@ list to iterator automatically !
 
 하지만, 우리가 list 나 tuple 같은 iterable 한 object 를 사용할때 굳이 iter() 함수를 사용하지 않아도 for 문을 사용하여 순차적으로 접근이 가능하였다.
  이것은 for 문으로 looping 하는 동안, python 내부에서 임시로 list를 iterator로 자동 변환해주었기 때문이다.
-
-
