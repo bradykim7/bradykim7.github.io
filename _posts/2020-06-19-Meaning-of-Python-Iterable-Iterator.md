@@ -9,6 +9,7 @@ tags:
 ---
 
 ### Meaning of Python Iterable & Iterator
+
 ### Original from [HERE](https://bluese05.tistory.com/55)
 
 
@@ -45,6 +46,7 @@ iterable 의 예로는 sequence type인 list, str, tuple 이 대표적이다.
 for x in range(5):
     print x
 ```
+
 ```shell script
 0
 1
@@ -72,6 +74,7 @@ a
 c
 b
 ```
+
 또한 __iter__() 나 __getitem__() 메소드로 정의된 class 는 모두 iterable 하다고 할 수 있다.
 
 iterable 은 for loop 말고도, zip(), map()과 같이 sequence 한 특징을 필요로 하는 작업에 유용하게 사용된다. 
