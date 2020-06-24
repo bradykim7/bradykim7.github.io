@@ -55,6 +55,7 @@ for x in range(5):
 4
 ```
 
+
 The above for statement that we used for granted was actually able to call the members sequentially because the list produced by range() was available.
 
 우리가 당연하게 사용했던 위와 같은 for 문은 사실 range() 로 생성된 list가 iterable 하기 때문에 순차적으로 member들을 불러서 사용이 가능했던 것이다. 
