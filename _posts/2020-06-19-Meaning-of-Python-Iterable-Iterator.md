@@ -21,7 +21,6 @@ First of all, Let's look about Iterable definition in Python docs.
  
 Iterable에 대한 python docs의 정의를 보자.
 
-```textmate
 An object capable of returning its members one at a time. Examples of iterables include 
 all sequence types (such as list, str, and tuple) and some non-sequence types like dict 
 and file and objects of any classes you define with an __iter__() or __getitem__() method. 
@@ -32,7 +31,6 @@ pass over the set of values. When using iterables, it is usually not necessary t
 call iter() or deal with iterator objects yourself. The for statement does that automatically 
 for you, creating a temporary unnamed variable to hold the iterator for the duration of the loop. See also iterator,
  sequence, and generator.
-```
 
 Iterable means that object can return respectively one by one.
 
