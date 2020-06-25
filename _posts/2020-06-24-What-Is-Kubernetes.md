@@ -89,12 +89,12 @@ The above diagram shows the difference between Docker swarm and Kubernetes.
 
 위의 그림은 Docker swarm 과 Kubernetes의 차이점을 보여 주고 있다. 
 
-Docker swarm | Kubernetes
----|---
-1. Docker swarm is created and managed by the Docker community. It is not open-source, that is, we are unable to customize it. | 1. Kubernetes is an open-source container orchestration tool that can be fully customizable. It was firstly developed by Google named as borg then, Google donated borg to Linux foundation.
-2. In docker swarm, the components such as API server, controller, scheduler, etc are installed directly on the OS of a master node. | 2. In Kubernetes, these components are not directly installed on the OS. They are installed on the containers which are surrounded by logical boundaries of POD.
-1. Docker swarm은 Docker community에 의해 관리되고 만들어졌다. 오픈소스가 아님| 2. 반면 Kubernetes는 높은 자유도를 지니고 있고 오픈소스이다. 
-1. Docker Swarm의 구성요소들은  메인 마스터 노드에 설치된다. | 2. Kubernetes 들은 OS에 직접 설치되지 않으며, POD에 의해 감싸진 컨테이너에 설치된다.
+Docker swarm|Kubernetes
+:---|:---
+Docker swarm is created and managed by the Docker community. It is not open-source, that is, we are unable to customize it. | Kubernetes is an open-source container orchestration tool that can be fully customizable. It was firstly developed by Google named as borg then, Google donated borg to Linux foundation.
+In docker swarm, the components such as API server, controller, scheduler, etc are installed directly on the OS of a master node. | In Kubernetes, these components are not directly installed on the OS. They are installed on the containers which are surrounded by logical boundaries of POD.
+Docker swarm은 Docker community에 의해 관리되고 만들어졌다. 오픈소스가 아님|  반면 Kubernetes는 높은 자유도를 지니고 있고 오픈소스이다. 
+Docker Swarm의 구성요소들은  메인 마스터 노드에 설치된다. | Kubernetes 들은 OS에 직접 설치되지 않으며, POD에 의해 감싸진 컨테이너에 설치된다.
 #### Why Does Every Company Demand Kubernetes?
 Kubernetes are the most demanding technology among various company because of the following benefits:
 
