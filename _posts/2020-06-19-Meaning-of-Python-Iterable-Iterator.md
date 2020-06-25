@@ -42,7 +42,7 @@ iterable 의 예로는 sequence type인 list, str, tuple 이 대표적이다.
 
 ```python
 for x in range(5):
-    print x
+    print(x)
 ```
 
 ```shell script
@@ -68,7 +68,7 @@ for y in x:
     print y
 ```
 
-
+Result:
 ```shell script
 a
 c

@@ -21,7 +21,7 @@ applications without too much technical knowledge. Nonetheless, it is still impo
 appreciate what goes on behind these frameworks.
 
 웹 프레임 워크들은 웹 어플리케이션을 간단하고 효율적이게 배포하고 만드는 것을 도와준다. 프레임워크와 함께 우리는 높은 수준의 어플리케이션을 많은 기술적인 지식 없이도
-만들어 낼 수 있다. 더불어 우리는 프레임워크 뒤에서 어떤일들이 일어나고 있는지 이해하는 걳 또한 매우 중요하다.
+만들어 낼 수 있다. 더불어 우리는 프레임워크 뒤에서 어떤일들이 일어나고 있는지 이해하는 것 또한 매우 중요하다.
 
 In this article, I go over some of the processes and concepts that web development frameworks used to make dynamic web 
 applications possible. I do this through the lens of a popular Python web framework Django. But although some of these 
