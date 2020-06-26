@@ -83,7 +83,7 @@ application in multiple containers and all the containers are managed by orchest
 
 #### Difference Between Docker Swarm and Kubernetes?
 
-<img src="{{ bradykim7.github.io }}/assets/images/2020/06/p178.jpg" alt="">
+<img src="{{ bradykim7.github.io }}/assets/images/2020/06/p18.jpg" alt="">
 
 The above diagram shows the difference between Docker swarm and Kubernetes.
 
