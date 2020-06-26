@@ -1,6 +1,6 @@
 ---
-title: "What is Kubernetes?"
-date: 2020-06-24
+title: "Python String"
+date: 2020-06-25
 categories:
   - Python3
   - String
