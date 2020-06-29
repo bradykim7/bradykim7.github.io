@@ -45,7 +45,7 @@ for x in range(5):
     print(x)
 ```
 
-```shell script
+```python
 0
 1
 2
@@ -69,7 +69,7 @@ for y in x:
 ```
 
 Result:
-```shell script
+```python
 a
 c
 b
@@ -105,7 +105,7 @@ As a result, the answer is 'NO'. Iterable Object can not be a Iterator.
 그렇다면, iterable 한 object들은 iterator 인가?
 결론부터 말하자면, iterable 이라고 해서 반드시 iterator 라는 것은 아니다. 
 
-```shell script
+```python
 >>> x = [1,2,3]
 >>> next(x)
 Traceback (most recent call last):
@@ -119,7 +119,7 @@ So, when we want to convert iterable to iterator, call iter() function.
 list 는 iterable 이지만, 위와 같이 next() 메소드로 호출해도 동작하지 않는다. iterator 가 아니라는 에러 메시지를 볼 수 있다.
 만약, iterable 을 iterator 로 변환하고 싶다면, iter() 라는 built-in function 을 사용하면 된다. 
 
-```shell script
+```python
 >>> x = [1,2,3]
 >>> type(x)
 <type 'list'>
@@ -132,7 +132,7 @@ Now, we knew how to convert object to listiterator type with iter() function.
 
 위와 같이 iter() 함수를 사용하여 list 를 listiterator 타입으로 변경 가능하다. 
 
-```shell script
+```python
 >>> next(y)
 1
 >>> next(y)

@@ -68,9 +68,8 @@ dfs(visited, graph, 'A')
 ```
 
 
-```shell script
+```python
 Result : A B D E F C 
-
 ```
 
 #### BFS (Breadth-first search)
