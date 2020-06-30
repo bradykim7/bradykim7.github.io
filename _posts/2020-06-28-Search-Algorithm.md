@@ -1,5 +1,5 @@
 ---
-title: "Loop Invariant"
+title: "Search Algorithm"
 date: 2020-06-28
 categories:
   - Algorithm
@@ -10,6 +10,7 @@ tags:
 ---
 
 ### Search Algorithm
+
 탐색 알고리즘 정리, 매일, 매일 알고리즘을 풀다 보니 지속적으로 코딩테스트에 나오는 문제가 있는데 바로, 경로찾기 문제이다.
 DFS 나 BFS 혹은 Dijkstra 좀 더 나아가 Kruskal's Algorithm 총 이 4개의 알고리즘을 모두 알고 있다면 코딩테스트에서
 좋은 결과를 얻지 않을까 싶어 정리한다. 하나씩 한번 알아보자
