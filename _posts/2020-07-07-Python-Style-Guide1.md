@@ -273,13 +273,3 @@ PI = 3.14
 GRAVITY = 9.8
 SPEED_OF_Light = 3*10**8
 ```
-
-##### Python Style Guide’s Code Layout
-
-##### Getting Familiar with using Comments
-##### Whitespaces in your Python Code
-##### General Programming Recommendations for Python
-##### Autoformatting your Python code
-
-
-<img src="{{ bradykim7.github.io }}/assets/images/2020/07/p11.jpg" alt="">
