@@ -1,7 +1,705 @@
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-author_profile: true
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12월 가고시마 여행 일정</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #EF4444; /* Red 500 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* Timeline marker line */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB; /* Gray 200 */
+        }
+        /* Timeline dot */
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid #f7f7f7;
+            z-index: 10;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        /* Day title left border */
+        .day-header {
+            border-left: 5px solid var(--primary-color);
+        }
+        /* Link styling */
+        a {
+            transition: color 0.2s;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#EF4444',
+                        'activity-blue': '#3B82F6', /* Blue 500 for activity highlights */
+                        'map-green': '#10B981', /* Emerald 500 for Map links */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-6 sm:p-10">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+                12월 <span class="text-primary-red">가고시마</span> 여행 일정
+            </h1>
+            <p class="text-lg text-gray-500 mt-2">4일간의 힐링과 관광 여정 (2025년 12월 21일 - 24일)</p>
+        </header>
+
+        <!-- General Info Card -->
+        <div class="bg-red-50 p-5 rounded-lg mb-8 border border-red-200">
+            <h2 class="text-xl font-bold text-primary-red flex items-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                중요 여행 정보
+            </h2>
+            <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+                <li class="flex items-start">
+                    <span class="font-semibold text-primary-red mr-2">•</span>
+                    <span class="flex-1">
+                        <span class="font-bold">렌터카:</span> 3박 4일 <a href="https://rent.toyota.co.jp/en/" target="_blank" class="font-bold text-primary-red hover:underline">토요타 렌터카</a> (8인승 밴)
+                    </span>
+                </li>
+                <li class="flex items-start">
+                    <span class="font-semibold text-primary-red mr-2">•</span>
+                    <span class="flex-1">
+                        <span class="font-bold">FAV LUX 주차:</span> <span class="font-bold">주차장 없음</span>. 근처 유료 코인 주차장 이용 필수. (텐몬칸 지역)
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="space-y-12">
+
+            <!-- Day 1: 12월 21일 (일) -->
+            <section>
+                <h2 class="day-header text-2xl font-extrabold text-gray-800 mb-6 pl-4 py-1">
+                    Day 1: 12월 21일 (일) - 가고시마 도착
+                </h2>
+                <div class="relative pl-6 sm:pl-10 space-y-8">
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">12:40 ~ 14:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 19l7-7 3 3-7 7-8-8-5 5 5-5z"/><path d="M2 12L4 10"/><path d="M10 2L12 4"/>
+                                </svg>
+                                인천 출발 & 가고시마 도착
+                                <a href="https://www.google.com/maps/dir/Kagoshima+Airport,+Japan/FAV+LUX+Kagoshima+Tenmonkan,+Japan" target="_blank" class="ml-2 p-1 rounded-full bg-map-green hover:bg-emerald-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3l7.07 19 2.51-7.38L19 12.07 3 3z"/>
+                                    </svg>
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">가고시마 공항 도착 후, <a href="https://rent.toyota.co.jp/en/" target="_blank" class="font-bold text-primary-red hover:underline">토요타 렌터카</a> 수령</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">15:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="6 15 12 9 18 15"/><path d="M11 3L13 3"/>
+                                </svg>
+                                호텔 체크인
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">숙소: <a href="https://fav-hotels.com/hotels/lux/kagoshimatenmonkan/" target="_blank" class="font-bold text-primary-red hover:underline">FAV LUX 가고시마 텐몬칸</a></p>
+                            <p class="text-gray-600 mt-1 text-sm"><span class="font-bold">객실:</span> 일본식 패밀리룸 (총 2 ROOM)</p>
+                            <p class="text-xs text-red-500 font-medium mt-1">
+                                *주차 유의: 호텔에 주차장 없음. 근처 유료 코인 주차장 이용 필수.*
+                            </p>
+                            <p class="text-xs text-gray-600 mt-1">
+                                <span class="font-bold">주차장 옵션:</span><br/>
+                                1. 테크노 파킹 공원 앞 (10 Tenokuchicho) - 도보 거리<br/>
+                                2. 트러스트 파크 텐몬칸 (9-11 Tenokuchicho) - 텐몬칸 공원 옆<br/>
+                                3. 센테라스 주차장 (2-8 Gofukumachi) - 도보 거리
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- RECOMMENDED ACTIVITY: Day 1 Evening -->
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">17:00 ~ 18:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 21a9 9 0 0 1-9-9c0-6 4-9 9-9s9 3 9 9a9 9 0 0 1-9 9z"/><path d="M10 8h4"/><path d="M12 16h.01"/>
+                                </svg>
+                                텐몬칸 거리 탐방 & 디저트
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🛍️ 텐몬칸 도리 (天文館通り)</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 가고시마 최대 번화가 - 쇼핑, 식사, 엔터테인먼트의 중심</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 위치: 호텔에서 도보 5분 이내</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">🍧 필수 디저트: 시로쿠마 빙수</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <a href="https://www.gltjp.com/en/directory/item/13127/" target="_blank" class="font-bold text-activity-blue hover:underline">텐몬칸 무쟈키 본점</a> - 1949년 창업, 시로쿠마 원조</p>
+                                    <p class="text-xs text-gray-600">• 가격: 클래식 시로쿠마 750엔, 딸기 시로쿠마 720엔</p>
+                                    <p class="text-xs text-gray-600">• 특징: 연유를 뿌린 빙수에 과일로 곰 얼굴 모양 장식</p>
+                                    <p class="text-xs text-gray-600">• 위치: 텐몬칸도리 전차역에서 도보 3분</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">🍠 기타 추천 디저트</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">사츠마이모 소프트아이스크림</span> - 고구마 맛 소프트</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">카루칸 (かるかん)</span> - 가고시마 전통 과자</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">사츠마아게</span> - 튀김 어묵 간식</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END RECOMMENDED ACTIVITY -->
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">19:00 ~ 20:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 18V22"/><path d="M12 22H9"/><path d="M12 22H15"/>
+                                </svg>
+                                석식 (Dinner) - 가고시마 흑돼지 맛집
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🐷 가고시마 쿠로부타 (흑돼지) 전문점 추천</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">1. <a href="https://www.kagoshima-yokanavi.jp/en/gourmet/10292" target="_blank" class="text-activity-blue hover:underline">아지모리 (味もり)</a> - 샤브샤브 전문 <a href="https://www.google.com/maps/place/Ajimori/@31.5959842,130.5517447,17z/data=!3m1!4b1!4m6!3m5!1s0x353e5db3b4b4f8bb:0x7c4b8f8f8f8f8f8f!8m2!3d31.5959842!4d130.5543196!16s%2Fg%2F11c2p9k7k7" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 1978년 창업, 흑돼지 샤브샤브 원조</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 특선 쿠로샤브 (특선黒しゃぶ) - 계란 소스와 함께</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 3,000-4,000엔/인 (코스 4,400엔)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 13-21 Sennichicho, 텐몬칸도리역 3분</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">예약:</span> +81 99-224-7634 (예약 필수)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">2. <a href="https://www.kurokatutei.net/in/english.html" target="_blank" class="text-activity-blue hover:underline">쿠로카츠테이 (黒かつ亭)</a> - 돈까스 전문 <a href="https://www.google.com/maps/search/Kurokatsutei+Tenmonkan+Kagoshima" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 흑돼지 돈까스 전문점, 바삭하고 촉촉한 식감</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 쿠로부타 로스카츠 정식</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 1,500-2,500엔/인</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 텐몬칸점, 가고시마 중앙역점 선택 가능</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">특징:</span> 밥과 양배추 무한리필 (점심시간)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">3. 이치니산 (いちにぃさん) - 이자카야 스타일 <a href="https://www.google.com/maps/search/いちにぃさん+Kagoshima+Tenmonkan" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 흑돼지 다양한 부위 구이, 사시미도 가능</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 쿠로부타 모둠구이, 돼지 사시미</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 2,500-3,500엔/인</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 텐몬칸 근처</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">4. 가고시마 라멘 전문점</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">고무라사키 (こむらさき)</span> - 진한 돈코츠 라멘 <a href="https://www.google.com/maps/search/こむらさき+Kagoshima+ramen" target="_blank" class="text-map-green hover:underline text-xs">📍</a></p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">노보루야 (のぼる屋)</span> - 담백한 스타일 <a href="https://www.google.com/maps/search/のぼる屋+Kagoshima+ramen" target="_blank" class="text-map-green hover:underline text-xs">📍</a></p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 900-1,200엔/그릇</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">특징:</span> 고무라사키는 70년 전통의 가고시마 대표 라멘</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-gray-500 mt-3">💡 <span class="font-bold">Tip:</span> 예약 권장, 특히 주말 저녁 시간대</p>
+                        </div>
+                    </div>
+
+                    <!-- RECOMMENDED ACTIVITY: Day 1 Night View -->
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">20:30 (추천, 선택)</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/>
+                                </svg>
+                                가고시마 야경 감상
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm"><span class="font-bold">돌핀포트 (Dolphin Port)</span>: 사쿠라지마 화산 야경을 볼 수 있는 해안 지역</p>
+                            <p class="text-gray-700 mt-1 text-sm"><span class="font-bold">아무 플라자 전망대</span>: 가고시마 중앙역 옥상 무료 전망대 (23:00 마감)</p>
+                        </div>
+                    </div>
+                    <!-- END RECOMMENDED ACTIVITY -->
+
+                </div>
+            </section>
+
+            <!-- Day 2: 12월 22일 (월) -->
+            <section>
+                <h2 class="day-header text-2xl font-extrabold text-gray-800 mb-6 pl-4 py-1">
+                    Day 2: 12월 22일 (월) - 이부스키 온천 & 관광
+                </h2>
+                <div class="relative pl-6 sm:pl-10 space-y-8">
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">09:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M17 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12.5L22 10z"/><path d="M14 17h6"/><path d="M8 12h.01"/><path d="M12 12h.01"/>
+                                </svg>
+                                체크아웃 및 이부스키 이동
+                                <a href="https://www.google.com/maps/dir/FAV+LUX+Kagoshima+Tenmonkan,+Japan/Ibusuki+Station,+Japan" target="_blank" class="ml-2 p-1 rounded-full bg-map-green hover:bg-emerald-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3l7.07 19 2.51-7.38L19 12.07 3 3z"/>
+                                    </svg>
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">FAV LUX 체크아웃 후, <span class="font-bold">이부스키</span>로 이동 (약 1시간 소요)</p>
+                            <p class="text-gray-600 mt-1 text-sm">10:00-10:30 이부스키 도착 예정</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">11:00 ~ 12:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 18V22"/><path d="M12 22H9"/><path d="M12 22H15"/>
+                                </svg>
+                                점심 (Lunch) - 이부스키 맛집
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🍜 온타마란동 (温たまらん丼) - 이부스키 명물</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">온천 반숙계란이 올라가는 이부스키 특색 덮밥</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">1. <a href="https://www.ibusuki.or.jp/eat/japanese/post-51/" target="_blank" class="text-activity-blue hover:underline">쵸쥬안 (長寿庵)</a> <a href="https://www.google.com/maps/place/Chojuan+Ibusuki/@-31.2472,130.6301,17z" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 흑돼지 소보로동 (갈아서 볶은 돼지고기) 전문점</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 黒豚そぼろ丼 (1,030엔) - 점심만 판매</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">영업:</span> 11:00-14:30, 17:00-22:00</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 2167 Junicho, Ibusuki (이부스키역에서 바로)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">2. <a href="https://aoba-ibusuki.com/en/" target="_blank" class="text-activity-blue hover:underline">아오바 (青葉)</a> <a href="https://www.google.com/maps/place/Aoba+Restaurant,+1-2-11+Minato,+Ibusuki,+Kagoshima" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 토마토가 들어간 독특한 온타마란동</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 이부스키 흑돼지동 (900엔)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">영업:</span> 11:00-14:30, 17:30-21:30</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 1-2-11 Minato, Ibusuki (이부스키역 1분)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">3. <a href="https://www.gltjp.com/en/directory/item/13247/" target="_blank" class="text-activity-blue hover:underline">사쓰마아지 (さつま味)</a> <a href="https://www.google.com/maps/search/Satsumaaji+Ibusuki+Kagoshima" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 7-8종 신선한 해산물 덮밥 전문</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 板前まかない丼 (1,080엔) - <span class="text-red-500">점심 10그릇 한정!</span></p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">영업:</span> 11:00-14:30, 17:30-21:30</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 이부스키역에서 도보 3-5분</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">4. <a href="https://nidaime-ibusuki.com/" target="_blank" class="text-activity-blue hover:underline">원조 이부스키라멘 니다이메</a> <a href="https://www.google.com/maps/place/Ganso+Ibusuki+Ramen+Nidaime,+412-4+Jutcho,+Ibusuki" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 가쓰오부시가 올라가는 이부스키 특색 라멘</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 가쓰오부시 라멘 (750엔)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">영업:</span> 11:00-14:30, 17:00-22:00</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 412-4 Jutcho, Ibusuki (니가쓰덴역 도보 10분)</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-gray-500 mt-3">💡 <span class="font-bold">Tip:</span> 사츠마이모(고구마) 소프트아이스크림, 누에콩 디저트도 추천!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- CHOOSE ONE ACTIVITY: Day 2 Main Activity -->
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">13:00 ~ 15:00 (둘 중 하나 선택)</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+                                </svg>
+                                주요 활동 선택 (Choose One)
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">옵션 A: 이부스키 모래찜질 (砂むし) 체험</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 세계 유일의 천연 모래 찜질 온천 (약 1.5-2시간)</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 장소 1: <a href="https://www.ibusuki.or.jp/" target="_blank" class="font-bold text-activity-blue hover:underline">스나무시 카이칸 SARAKU</a> (공공시설, 현대적)</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 장소 2: 해변 또는 료칸 제공 모래찜질 (자연스러운 분위기)</p>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">옵션 B: 이케다호 & 카이몬다케 관광</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 이케다호 파라다이스에서 큰 장어 관람 & 장어덮밥</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 카이몬다케(開聞岳) 주변 드라이브 (사쓰마 후지산)</p>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">옵션 C: 치란 사무라이 거리 관광</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 에도시대 사무라이 정원과 전통 거리 (차로 30분)</p>
+                            <p class="text-gray-700 mt-1 text-sm ml-4">• 7개의 아름다운 일본 정원 관람</p>
+                        </div>
+                    </div>
+                    <!-- END CHOOSE ONE ACTIVITY -->
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">15:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M14 17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-2"/><path d="M7 19v2"/><path d="M17 19v2"/><path d="M10 19v2"/><path d="M14 19v2"/>
+                                </svg>
+                                료칸 체크인
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">숙소: <a href="https://www.kinkouroh.co.jp/en/" target="_blank" class="font-bold text-primary-red hover:underline">코란 노유 킨코우로 (Koran-no-yu Kinko-ro)</a> (이부스키)</p>
+                            <p class="text-gray-600 mt-1 text-sm"><span class="font-bold">객실:</span> 2 ROOM</p>
+                            <p class="text-xs text-gray-500 mt-1">*료칸 카이세키 저녁 식사 포함 (보통 18:00~19:00). 체크아웃: 익일 10:00*</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">16:00 ~ 18:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 12C3 3 12 3 12 3s9 0 9 9-9 9-9 9-9 0-9-9z"/><path d="M12 7v5l3 3"/>
+                                </svg>
+                                료칸 내 휴식 및 온천욕
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">료칸 시설 이용: 온천, 족욕, 정원 산책</p>
+                            <p class="text-gray-600 mt-1 text-sm">석식 전 여유로운 휴식 시간</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">18:00 ~ 19:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 18V22"/><path d="M12 22H9"/><path d="M12 22H15"/>
+                                </svg>
+                                료칸 카이세키 저녁 식사
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">가고시마 현지 식재료를 사용한 정통 일본 코스 요리</p>
+                            <p class="text-gray-600 mt-1 text-sm">개별 룸 또는 레스토랑에서 제공</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Day 3: 12월 23일 (화) -->
+            <section>
+                <h2 class="day-header text-2xl font-extrabold text-gray-800 mb-6 pl-4 py-1">
+                    Day 3: 12월 23일 (화) - 가고시마 시내 복귀
+                </h2>
+                <div class="relative pl-6 sm:pl-10 space-y-8">
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">10:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/><path d="M20 22v-7"/>
+                                </svg>
+                                료칸 체크아웃 & 가고시마 시내 이동
+                                <a href="https://www.google.com/maps/dir/Koran-no-yu+Kinko-ro,+5-25-18+Yunohama,+Ibusuki,+Kagoshima+891-0406,+Japan/Sheraton+Kagoshima,+Japan" target="_blank" class="ml-2 p-1 rounded-full bg-map-green hover:bg-emerald-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3l7.07 19 2.51-7.38L19 12.07 3 3z"/>
+                                    </svg>
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">코란 노유 킨코우로 체크아웃 후, 가고시마 시내로 이동 (약 1시간 소요)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- RECOMMENDED ACTIVITY: Day 3 Morning -->
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">11:30 ~ 13:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M8 20l4-16 4 16m-4 0l-1-4h2l-1 4"/><path d="M8 8l-2 10"/><path d="M16 8l2 10"/>
+                                </svg>
+                                <a href="https://www.senganen.jp/en/" target="_blank" class="text-activity-blue hover:underline">센간엔 (仙巌園)</a> 관람
+                                <a href="https://www.google.com/maps/dir/Koran-no-yu+Kinko-ro,+5-25-18+Yunohama,+Ibusuki,+Kagoshima+891-0406,+Japan/Senganen,+Japan" target="_blank" class="ml-2 p-1 rounded-full bg-map-green hover:bg-emerald-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3l7.07 19 2.51-7.38L19 12.07 3 3z"/>
+                                    </svg>
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🏯 사쓰마 번주의 역사적 정원 (UNESCO 세계문화유산)</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">센간엔 정보</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">개장:</span> 9:00-17:00 (연중무휴)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">입장료:</span> 성인 1,600엔 (정원+고텐), 1,000엔 (정원만)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">특징:</span> 사쿠라지마를 차경(借景)으로 활용한 일본식 정원</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">볼거리:</span> 이소 저택, 쇼코 슈세이칸 박물관, 대나무 숲</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">접근:</span> 가고시마 중앙역에서 시티뷰 버스 30분</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">체험 활동</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">사무라이 갑옷 착용 체험</span></p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">잠보모치</span> - 구운 떡에 달콤한 간장/된장 소스</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">정원 카페</span> - 시로쿠마 빙수와 정원 뷰</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">13:00 ~ 14:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 18V22"/><path d="M12 22H9"/><path d="M12 22H15"/>
+                                </svg>
+                                점심 (Lunch) - 센간엔 또는 시내 복귀
+                            </h3>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">옵션 A: 센간엔 내 레스토랑</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">오오카테이 (大方亭)</span> - 가고시마 향토 요리</p>
+                                    <p class="text-xs text-gray-600">• 특징: 현지 도미와 쿠로부타 흑돼지 요리</p>
+                                    <p class="text-xs text-gray-600">• 정원 뷰를 보며 식사 가능</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">옵션 B: 시내 복귀 후 점심</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">텐몬칸 지역</span> - 다양한 레스토랑 선택</p>
+                                    <p class="text-xs text-gray-600">• 가고시마 라멘, 흑돼지 요리, 해산물 등</p>
+                                    <p class="text-xs text-gray-600">• 호텔 체크인 전 쇼핑 및 휴식</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END RECOMMENDED ACTIVITY -->
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                호텔 체크인
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">숙소: <a href="https://www.marriott.com/en-us/hotels/kojsi-sheraton-kagoshima/overview/" target="_blank" class="font-bold text-primary-red hover:underline">Sheraton Kagoshima</a></p>
+                            <p class="text-gray-600 mt-1 text-sm"><span class="font-bold">객실:</span> 3 ROOM</p>
+                            <p class="text-xs text-red-500 font-medium mt-1">
+                                *주차: 호텔 뒤편 키라메키 난고쿠 주차장 이용*
+                            </p>
+                            <p class="text-xs text-gray-600 mt-1">
+                                <span class="font-bold">주차 정보:</span><br/>
+                                • 위치: 호텔 건물 뒤 대각선 방향 (きらめきなんごく 주차장)<br/>
+                                • 요금: 1박당 ¥1,500<br/>
+                                • 체크인/체크아웃 시 프런트에서 주차권 제시하여 정산<br/>
+                                • 팁: 짐이 많을 경우 호텔 입구에서 먼저 하차 후 주차 추천
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">16:30 ~ 18:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/>
+                                </svg>
+                                시로야마 전망대 & 가고시마 파노라마 뷰
+                                <a href="https://www.google.com/maps/place/Shiroyama+Observatory/@31.5932,130.5567,17z" target="_blank" class="ml-2 p-1 rounded-full bg-map-green hover:bg-emerald-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3l7.07 19 2.51-7.38L19 12.07 3 3z"/>
+                                    </svg>
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🌅 가고시마 최고의 전망 명소</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">시로야마 전망대 정보</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">입장료:</span> 무료</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">운영:</span> 24시간 개방</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">높이:</span> 해발 107m</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">접근:</span> 가고시마 중앙역에서 시티뷰 버스 24분</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">도보:</span> 산책로 입구에서 10-12분 (계단 구간)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">전망 포인트</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">사쿠라지마 화산</span> - 정면 파노라마 뷰</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">긴코완 (錦江湾)</span> - 가고시마만 전경</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가고시마 시가지</span> - 도시 전체 조망</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">원거리:</span> 기리시마, 가이몬다케까지 (날씨 좋은 날)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">방문 팁</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">최적 시간:</span> 해질 무렵 (일몰 + 야경 동시 감상)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">시설:</span> 카페, 포토존, 산책길</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">추천:</span> 달빛이 있는 날 사쿠라지마가 더 아름다움</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot bg-activity-blue"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg shadow-md border-t-2 border-activity-blue hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-activity-blue">18:30 ~ 20:30</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon !text-activity-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 18V22"/><path d="M12 22H9"/><path d="M12 22H15"/>
+                                </svg>
+                                석식 (Dinner) - 가고시마 중앙역/호텔 근처
+                            </h3>
+                            <p class="text-gray-700 mt-1 text-sm font-bold">🥩 가고시마 흑우 & 흑돼지 전문 맛집</p>
+                            
+                            <div class="mt-3 space-y-2">
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">1. 호텔 내 레스토랑 (편리함 최우선)</p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">SATSUMAGMA</span> - 일본식 파인다이닝</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">FLYING HOG GRILL</span> - 서양식 그릴</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">Daily Social</span> - 캐주얼 다이닝</p>
+                                    <p class="text-xs text-gray-600">• 장점: 이동 불필요, 편안한 분위기</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">2. 쥬안 (Juan) - 흑돼지 샤브샤브 전문 <a href="https://www.google.com/maps/search/Juan+shabu+shabu+Kagoshima+Station" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 엄선된 질 좋은 흑돼지, 다양한 야채</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 3,000-4,500엔/인</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 가고시마 중앙역 근처</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">특장점:</span> 주차장 완비, 정갈한 인테리어</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">3. 카렌 가고시마텐 - 가고시마 흑우 전문 <a href="https://www.google.com/maps/search/Karen+Kagoshima+black+beef+restaurant" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> 최고급 가고시마 흑우와 흑돼지</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">메뉴:</span> 샤브샤브, 세이로찜, 돈카츠</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 코스 8,500엔 (고급 코스)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">영업:</span> 17:30-22:00 (LO 21:00)</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 가고시마 중앙역에서 차로 10분</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">4. 덴몬칸 와카나 - 현지 인기 이자카야 <a href="https://www.google.com/maps/search/Wakana+izakaya+Tenmonkan+Kagoshima" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">특징:</span> TV 출연 맛집, 현지인들이 주로 찾는 곳</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">메뉴:</span> 1인용 흑돼지 샤브샤브, 이자카야식 안주</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">가격:</span> 2,500-3,500엔/인</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">주의:</span> 웨이팅 필수 (인기 맛집)</p>
+                                </div>
+                                
+                                <div class="bg-white p-2 rounded border-l-4 border-activity-blue">
+                                    <p class="text-sm font-bold text-gray-900">5. 피나 (PINA) - 바 스타일 레스토랑 <a href="https://www.google.com/maps/search/PINA+restaurant+Tenmonkan+Kagoshima+pizza" target="_blank" class="ml-1 text-map-green hover:underline text-xs">📍 지도</a></p>
+                                    <p class="text-xs text-gray-600 mt-1">• <span class="font-bold">분위기:</span> 앤티크한 비일상적 공간</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">메뉴:</span> 세련된 육류 요리, 화덕 피자</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">위치:</span> 텐몬칸 '미식 거리'</p>
+                                    <p class="text-xs text-gray-600">• <span class="font-bold">특징:</span> 본격적인 바 스타일, 아늑한 분위기</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-gray-500 mt-3">💡 <span class="font-bold">Tip:</span> 고급 레스토랑은 사전 예약 필수. 호텔 컨시어지 도움 요청 권장</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 4: 12월 24일 (수) -->
+            <section>
+                <h2 class="day-header text-2xl font-extrabold text-gray-800 mb-6 pl-4 py-1">
+                    Day 4: 12월 24일 (수) - 인천 복귀
+                </h2>
+                <div class="relative pl-6 sm:pl-10 space-y-8">
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">10:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 11l3 3-3 3"/><path d="M12 2v20"/>
+                                </svg>
+                                체크아웃 & 자유 일정
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">여행 마지막 날 자유롭게 시간 활용.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">13:00</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                                </svg>
+                                공항 도착 및 렌터카 반납
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">가고시마 공항 도착 후 렌터카 반납 완료 (약 1시간 소요)</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-2 border-primary-red hover:shadow-lg transition">
+                            <p class="text-sm font-semibold text-primary-red">15:30 ~ 17:15</p>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 12H20"/><path d="M18 6L20 4"/><path d="M18 18L20 20"/><path d="M4 6L2 4"/><path d="M4 18L2 20"/><path d="M20 12L22 10"/><path d="M22 14L20 12"/>
+                                </svg>
+                                가고시마 출발 & 인천 도착
+                            </h3>
+                            <p class="text-gray-600 mt-1 text-sm">안전하게 인천공항 도착</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+        
+    </div>
+
+    <!-- Icon script to make the SVGs work nicely -->
+    <script>
+        // Dummy script to simulate icon loading if they were from a library, but here we use inline SVG.
+        // No action needed since icons are inline, but keeping this block for structure.
+        console.log("Itinerary website loaded successfully.");
+    </script>
+</body>
+</html>
